@@ -43,7 +43,7 @@ print(texto_replace)
 
 # espaço em branco
 
-texto7 = "    aiiiiiii zeeeeeee    "
+texto7 = "    adkjakjdasdasdasdasdas   "
 print(texto7.strip()) # remove os espaços em branco dos dois lados
 print(texto7.lstrip()) # remove da esquerda
 print(texto7.rstrip()) # remove da direita
