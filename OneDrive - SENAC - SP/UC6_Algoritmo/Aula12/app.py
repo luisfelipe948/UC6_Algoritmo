@@ -25,5 +25,30 @@ if opcao == 1:
     excel.to_excel("Aula12\portal_alunos.xlsx", index=False)    # exportando o DataFrame para um arquivo Excel
 
 elif opcao == 2:
-    print("Opção 2 selecionada.")
-    print()
+    nome = str(input("Digite seu nome: "))
+    idade = int(input("Digite a idade: "))
+    altura = float(input("Digite a altura: "))
+    
+    dados = {
+        "nome": [nome],
+        "idade": [idade],
+        "altura": [altura]
+    }
+    
+    leitura_excel = pd.read_excel("Aula12\portal_alunos.xlsx")
+    nova_linha = len(leitura_excel)
+    
+    leitura_excel.loc[nova_linha, nome] = dados ["nome"]
+    leitura_excel.loc[nova_linha, idade] = dados ["idade"]
+    leitura_excel.loc[nova_linha, altura] = dados ["altura"]
+    
+    leitura_excel.to_excel("Aula12\portal_alunos.xlsx", index=False)
+    print("Dados adicionados com sucesso!")
+
+
+elif opcao == 3:
+    print("Opção 3 selecionada.")
+    leitura_apagado = int(input("Digite o número da linha que deseja apagar: "))
+
+    leitura_excel = pd.read_excel("Aula12\portal_alunos.xlsx")
+    leitura_excel.to_excel("Aula12\portal_alunos.xlsx", index=False)
